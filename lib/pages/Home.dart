@@ -13,10 +13,11 @@ class Homepage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _searchField(),
-          /*   SizedBox(
+          SizedBox(
             height: 40,
-          ), */
+          ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 20),
@@ -35,10 +36,17 @@ class Homepage extends StatelessWidget {
               Container(
                 height: 150,
                 color: Colors.red,
-                child: ListView.builder(itemBuilder: (context, index) {
-                  return Container();
-                }),
-              )
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Container(
+                        /*  margin: EdgeInsets.only(left: 20),
+                      width: 100,
+                      height: 100,
+                      color: Colors.blue, */
+                        );
+                  },
+                ),
+              ),
             ],
           )
         ],
