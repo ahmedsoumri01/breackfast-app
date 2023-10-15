@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/category_model.dart';
-import 'package:flutter_application_1/models/diet_model.dart';
-import 'package:flutter_application_1/models/popular_model.dart';
+import 'package:Breackfast_App/models/category_model.dart';
+import 'package:Breackfast_App/models/diet_model.dart';
+import 'package:Breackfast_App/models/popular_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Homepage extends StatefulWidget {
@@ -43,7 +43,9 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: appBar(),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: ListView(
+      body: /* Image.asset("assets/images/pizza.png") */
+
+          ListView(
         children: [
           _searchField(),
           const SizedBox(
@@ -107,7 +109,7 @@ class _HomepageState extends State<Homepage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  SvgPicture.asset(popularDiets[index].iconPath,
+                  Image.asset(popularDiets[index].iconPath,
                       height: 60, width: 60),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -184,7 +186,7 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SvgPicture.asset(diets[index].iconPath),
+                        Image.asset(diets[index].iconPath),
                         const SizedBox(
                           height: 10,
                         ),
@@ -288,7 +290,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(
+                          child: Image.asset(
                             categories[index].iconPath,
                             height: 20,
                             width: 20,
@@ -378,7 +380,7 @@ class _HomepageState extends State<Homepage> {
   AppBar appBar() {
     return AppBar(
       title: const Text(
-        "flutter_application_1",
+        "Brealfast App",
         style: TextStyle(
             color: Color.fromARGB(255, 0, 0, 0),
             fontWeight: FontWeight.bold,

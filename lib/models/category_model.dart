@@ -16,32 +16,32 @@ class CategoryModel {
     categories.add(
       CategoryModel(
         name: 'Burger',
-        iconPath: "assets/plate.svg",
-        boxColor: Color.fromARGB(255, 255, 217, 217),
+        iconPath: 'assets/images/berger.png',
+        boxColor: const Color.fromARGB(255, 255, 217, 217),
       ),
     );
 
     categories.add(
       CategoryModel(
         name: 'Pizza',
-        iconPath: 'assets/icons/pizza.svg',
-        boxColor: Color.fromARGB(255, 217, 255, 217),
+        iconPath: 'assets/images/pizza.png',
+        boxColor: const Color.fromARGB(255, 217, 255, 217),
       ),
     );
 
     categories.add(
       CategoryModel(
         name: 'Sushi',
-        iconPath: 'assets/icons/sushi.svg',
-        boxColor: Color.fromARGB(255, 217, 217, 255),
+        iconPath: 'assets/images/sushi.jpg',
+        boxColor: const Color.fromARGB(255, 217, 217, 255),
       ),
     );
 
     categories.add(
       CategoryModel(
         name: 'Salad',
-        iconPath: 'assets/icons/salad.svg',
-        boxColor: Color.fromARGB(255, 255, 255, 217),
+        iconPath: 'assets/images/pizza.png',
+        boxColor: const Color.fromARGB(255, 255, 255, 217),
       ),
     );
     return categories;

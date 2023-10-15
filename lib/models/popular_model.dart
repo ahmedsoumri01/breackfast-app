@@ -19,7 +19,7 @@ class PopularDietsModel {
 
     popularDiets.add(PopularDietsModel(
       name: 'Blueberry Pancake',
-      iconPath: 'assets/icons/blueberry-pancake.svg',
+      iconPath: 'assets/images/pizza.png',
       level: 'Medium',
       duration: '30mins',
       calorie: '230kCal',
@@ -28,7 +28,7 @@ class PopularDietsModel {
 
     popularDiets.add(PopularDietsModel(
       name: 'Salmon Nigiri',
-      iconPath: 'assets/icons/salmon-nigiri.svg',
+      iconPath: 'assets/images/pizza.png',
       level: 'Easy',
       duration: '20mins',
       calorie: '120kCal',
