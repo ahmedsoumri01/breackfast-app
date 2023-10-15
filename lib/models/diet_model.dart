@@ -22,23 +22,21 @@ class DietModel {
   static List<DietModel> getDiets() {
     List<DietModel> diets = [];
     diets.add(DietModel(
-      name: "Keto Diet",
-      iconPath: "assets/icons/keto_diet.png",
-      level: "Intermediate",
-      duration: "30 Days",
-      calorie: "1200 Kcal",
-      viewIsSelected: false,
-      boxColor: Color.fromARGB(255, 67, 91, 117),
-    ));
+        name: "Keto Diet",
+        iconPath: "assets/icons/keto_diet.png",
+        level: "Intermediate",
+        duration: "30 Days",
+        calorie: "1200 Kcal",
+        viewIsSelected: false,
+        boxColor: Color(0xff9DCEFF)));
     diets.add(DietModel(
-      name: "Paleo Diet",
-      iconPath: "assets/icons/paleo_diet.png",
-      level: "Beginner",
-      duration: "15 Days",
-      calorie: "1000 Kcal",
-      viewIsSelected: false,
-      boxColor: Color.fromARGB(255, 37, 186, 37),
-    ));
+        name: "Paleo Diet",
+        iconPath: "assets/icons/paleo_diet.png",
+        level: "Beginner",
+        duration: "15 Days",
+        calorie: "1000 Kcal",
+        viewIsSelected: false,
+        boxColor: Color(0xffEEA4CE)));
     diets.add(DietModel(
       name: "Vegan Diet",
       iconPath: "assets/icons/vegan_diet.png",
