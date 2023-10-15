@@ -1,11 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/category_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key});
+class Homepage extends StatefulWidget {
+  Homepage({Key? key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  List<CategoryModel> categories = [];
+
+  void _getCategories() {
+    categories = CategoryModel.getCategories();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
+    _getCategories();
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
@@ -16,41 +35,79 @@ class Homepage extends StatelessWidget {
           SizedBox(
             height: 40,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  'categories',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                height: 150,
-                color: Colors.red,
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return Container(
-                        /*  margin: EdgeInsets.only(left: 20),
-                      width: 100,
-                      height: 100,
-                      color: Colors.blue, */
-                        );
-                  },
-                ),
-              ),
-            ],
-          )
+          _categoriesSection()
         ],
       ),
+    );
+  }
+
+  Column _categoriesSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'categories',
+            style: TextStyle(
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Container(
+          height: 150,
+          /*  color: Colors.red, */
+          child: ListView.separated(
+            itemCount: categories.length,
+            scrollDirection: Axis.horizontal,
+            separatorBuilder: (context, index) => SizedBox(
+              width: 25,
+            ),
+            itemBuilder: (context, index) {
+              return Container(
+                width: 100,
+                decoration: BoxDecoration(
+                  color: categories[index].boxColor.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(
+                            categories[index].iconPath,
+                            height: 20,
+                            width: 20,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        categories[index].name,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    ]),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 
