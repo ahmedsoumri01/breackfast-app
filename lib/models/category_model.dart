@@ -16,7 +16,7 @@ class CategoryModel {
     categories.add(
       CategoryModel(
         name: 'Burger',
-        iconPath: 'assets/icons/burger.svg',
+        iconPath: "assets/plate.svg",
         boxColor: Color.fromARGB(255, 255, 217, 217),
       ),
     );

@@ -49,11 +49,11 @@ class _HomepageState extends State<Homepage> {
           const SizedBox(
             height: 40,
           ),
-          /*  _categoriesSection(), */
+          _categoriesSection(),
           const SizedBox(
             height: 40,
           ),
-          /*  _dietSection(), */
+          _dietSection(),
           const SizedBox(
             height: 40,
           ),
@@ -134,7 +134,7 @@ class _HomepageState extends State<Homepage> {
                   GestureDetector(
                     onTap: () {},
                     child: SvgPicture.asset(
-                      "assets/icons/arrow.svg",
+                      "Arrow.svg",
                       height: 20,
                       width: 20,
                     ),
@@ -335,30 +335,33 @@ class _HomepageState extends State<Homepage> {
               fontSize: 15,
               fontWeight: FontWeight.w400,
             ),
-            prefixIcon: Padding(
-                padding: const EdgeInsets.all(12),
-                child: SvgPicture.asset(
-                  "assets/icons/search.svg",
-                  height: 20,
-                  width: 20,
-                )),
+            prefixIcon: const Padding(
+              padding: EdgeInsets.all(12),
+              child: Icon(
+                Icons.search, // Use the search icon
+                color:
+                    Color.fromARGB(255, 0, 0, 0), // Change the color as needed
+                size: 30, // Change the size as needed
+              ),
+            ),
             suffixIcon: Container(
               width: 100,
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const VerticalDivider(
+                  VerticalDivider(
                     color: Color.fromARGB(255, 112, 112, 112),
                     thickness: 0.1,
                     indent: 10,
                     endIndent: 10,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: SvgPicture.asset(
-                      "assets/icons/Filter.svg",
-                      height: 20,
-                      width: 20,
+                    padding: EdgeInsets.all(12.0),
+                    child: Icon(
+                      Icons.settings, // Use the search icon
+                      color: Color.fromARGB(
+                          255, 0, 0, 0), // Change the color as needed
+                      size: 30, // Change the size as needed
                     ),
                   ),
                 ],
@@ -375,7 +378,7 @@ class _HomepageState extends State<Homepage> {
   AppBar appBar() {
     return AppBar(
       title: const Text(
-        "Breakfast",
+        "flutter_application_1",
         style: TextStyle(
             color: Color.fromARGB(255, 0, 0, 0),
             fontWeight: FontWeight.bold,
@@ -393,13 +396,13 @@ class _HomepageState extends State<Homepage> {
             margin: const EdgeInsets.all(5),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 207, 169, 169),
+              /* color: const Color.fromARGB(255, 207, 169, 169), */
               borderRadius: BorderRadius.circular(10),
             ),
-            child: SvgPicture.asset(
-              "assets/icons/dots.svg",
-              height: 20,
-              width: 20,
+            child: const Icon(
+              Icons.arrow_circle_left_outlined, // Use the search icon
+              color: Color.fromARGB(255, 0, 0, 0), // Change the color as needed
+              size: 30, // Change the size as needed
             ),
           )),
       actions: [
@@ -410,13 +413,13 @@ class _HomepageState extends State<Homepage> {
               alignment: Alignment.center,
               width: 37,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 207, 169, 169),
+                /* color: const Color.fromARGB(255, 207, 169, 169), */
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: SvgPicture.asset(
-                "assets/icons/Filter.svg",
-                height: 20,
-                width: 40,
+              child: const Icon(
+                Icons.filter_list,
+                color: Color.fromARGB(255, 0, 0, 0),
+                size: 20,
               ),
             ))
       ],
